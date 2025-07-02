@@ -1,0 +1,90 @@
+# ======================
+# FRONTEND (Vite + React + Tailwind)
+# ======================
+
+# Logs
+frontend/logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+
+# Dependency directories
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+frontend/dist-ssr/
+
+# Local env files
+frontend/.env
+frontend/.env.*.local
+frontend/*.local
+
+# IDE/editor folders
+frontend/.vscode/*
+!frontend/.vscode/extensions.json
+frontend/.idea/
+frontend/.DS_Store
+
+# TS/JS cache
+frontend/.turbo/
+frontend/.parcel-cache/
+frontend/.next/
+frontend/.nuxt/
+frontend/.svelte-kit/
+frontend/.vite/
+
+# Test coverage
+frontend/coverage/
+
+# ======================
+# BACKEND (Express + Mongo + Handlebars)
+# ======================
+
+# Dependency directories
+backend/node_modules/
+
+# Logs
+backend/logs/
+backend/*.log
+backend/npm-debug.log*
+backend/yarn-debug.log*
+
+# Env/Secrets
+backend/.env
+backend/*.env
+backend/.env.*.local
+
+# System/Editor files
+backend/.DS_Store
+backend/.idea/
+backend/.vscode/
+
+# Build/output (caso compile algo)
+backend/dist/
+backend/build/
+backend/coverage/
+
+# ======================
+# GERAL (para todo o projeto)
+# ======================
+
+# IDE/editor configs
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+*.log
+
+# MacOS system files
+._*
+.Spotlight-V100
+.Trashes
