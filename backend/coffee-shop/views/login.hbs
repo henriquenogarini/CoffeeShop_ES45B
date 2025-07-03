@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <title>Login - Coffee Shop</title>
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-  <h1>Login</h1>
-  <form action="/auth/login" method="POST">
-    <label for="username">Usuário:</label>
-    <input type="text" name="username" required><br><br>
-    <label for="password">Senha:</label>
-    <input type="password" name="password" required><br><br>
-    <button type="submit">Entrar</button>
-  </form>
-  <p>Não tem conta? <a href="/auth/register">Cadastre-se</a></p>
+  <div class="container">
+    <h2 class="title">☕ Coffee Shop</h2>
+
+    <h1>Login</h1>
+    <form action="/auth/login" method="POST">
+      <div class="input-group">
+        <label for="username">Usuário:</label>
+        <input type="text" name="username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha:</label>
+        <input type="password" name="password" required>
+      </div>
+
+      <div class="button-group">
+        <button type="submit">Entrar</button>
+        <a href="/auth/register" class="secondary-button">Cadastrar</a>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
