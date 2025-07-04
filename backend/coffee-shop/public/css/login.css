@@ -5,8 +5,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container {
@@ -14,8 +16,15 @@ body {
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  width: 350px;
+  width: 100%;
+  max-width: 400px;
   text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
 }
 
 .title {
@@ -24,6 +33,20 @@ body {
   color: #d8b293;
   font-weight: bold;
   letter-spacing: 1px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { 
+    filter: brightness(1); 
+    transform: scale(1);
+  }
+  50% { 
+    filter: brightness(1.1); 
+    transform: scale(1.02);
+  }
 }
 
 h1 {
@@ -51,11 +74,14 @@ h1 {
   background-color: #5c4033;
   color: #fff;
   font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .input-group input:focus {
   outline: none;
   background-color: #6e4c39;
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(164, 117, 81, 0.3);
 }
 
 .button-group {
@@ -73,6 +99,7 @@ button,
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 button {
@@ -90,10 +117,65 @@ button {
 
 button:hover {
   background-color: #946846;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .secondary-button:hover {
   background-color: #82563b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Animações e efeitos adicionais */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  button, .secondary-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 15px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .input-group input {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  button, .secondary-button {
+    padding: 12px;
+    font-size: 14px;
+  }
 }
 
 

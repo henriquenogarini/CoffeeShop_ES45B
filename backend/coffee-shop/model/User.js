@@ -32,8 +32,16 @@ module.exports = class User {
     await conn.close();
 
     if (user && await bcrypt.compare(password, user.password)) {
-      return true;
+      return { success: true, user: { username: user.username, email: user.email } };
     }
-    return false;
+    return { success: false };
+  }
+
+  static async getUserByUsername(username) {
+    const conn = await MongoClient.connect(url);
+    const db = conn.db(dbName);
+    const user = await db.collection('users').findOne({ username }, { projection: { password: 0 } });
+    await conn.close();
+    return user;
   }
 };

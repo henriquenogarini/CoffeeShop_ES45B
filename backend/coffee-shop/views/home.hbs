@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Página Protegida</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Shop - Bem-vindo!</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>Bem-vindo à página protegida!</h1>
-  <p>Usuário autenticado com sucesso.</p>
-  <a href="/auth/logout">Sair</a>
+  <div class="container">
+    <header class="header">
+      <h1 class="logo">☕ Coffee Shop</h1>
+      <p class="subtitle">Seja bem-vindo ao seu café favorito!</p>
+    </header>
+
+    <div class="card welcome-message">
+      <p>Olá, seja bem-vindo!</p>
+      <p>Você está autenticado com sucesso. Explore nosso cardápio especial!</p>
+    </div>
+
+    <div class="card">
+      <h2>🌟 Nossos Cafés Especiais</h2>
+      <div class="coffee-menu">
+        <div class="coffee-item">
+          <div class="coffee-icon">☕</div>
+          <h3>Expresso Tradicional</h3>
+          <p>Café encorpado e aromático, extraído na medida certa para despertar seus sentidos.</p>
+        </div>
+        
+        <div class="coffee-item">
+          <div class="coffee-icon">🥛</div>
+          <h3>Cappuccino Cremoso</h3>
+          <p>Expresso com leite vaporizado e espuma cremosa, polvilhado com canela.</p>
+        </div>
+        
+        <div class="coffee-item">
+          <div class="coffee-icon">🍫</div>
+          <h3>Mocha Delicioso</h3>
+          <p>Combinação perfeita de café, chocolate e leite, finalizado com chantilly.</p>
+        </div>
+        
+        <div class="coffee-item">
+          <div class="coffee-icon">🧊</div>
+          <h3>Café Gelado</h3>
+          <p>Refrescante café gelado com gelo e um toque de baunilha para os dias quentes.</p>
+        </div>
+        
+        <div class="coffee-item">
+          <div class="coffee-icon">🌿</div>
+          <h3>Latte Macchiato</h3>
+          <p>Camadas perfeitas de leite, café e espuma, uma verdadeira obra de arte.</p>
+        </div>
+        
+        <div class="coffee-item">
+          <div class="coffee-icon">🍯</div>
+          <h3>Café com Mel</h3>
+          <p>Expresso adoçado naturalmente com mel puro, uma experiência única.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Área do Usuário</h2>
+      <div class="button-group">
+        <a href="#" class="btn btn-primary">Ver Pedidos</a>
+        <a href="#" class="btn btn-secondary">Favoritos</a>
+        <a href="#" class="btn btn-secondary">Perfil</a>
+        <a href="/auth/logout" class="btn btn-danger">Sair</a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>☕ Coffee Shop - O melhor café da cidade</p>
+      <p>Feito com amor e muito café ❤️</p>
+    </footer>
+  </div>
 </body>
 </html>

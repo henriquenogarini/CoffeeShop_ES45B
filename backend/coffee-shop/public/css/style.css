@@ -1,0 +1,422 @@
+/* CSS Principal - Coffee Shop Theme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #2e1d13, #3e2c23);
+  color: #eae0d5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header .logo {
+  font-size: 3em;
+  color: #d8b293;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.header .subtitle {
+  font-size: 1.2em;
+  color: #f5e6d8;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.card {
+  background-color: #3e2c23;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  margin-bottom: 30px;
+  border: 2px solid #5c4033;
+}
+
+.card h1, .card h2 {
+  color: #d8b293;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card h1 {
+  font-size: 2.5em;
+}
+
+.card h2 {
+  font-size: 2em;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(45deg, #5c4033, #6e4c39);
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.welcome-message h1 {
+  font-size: 2.5em;
+  color: #fff8f0;
+  margin-bottom: 15px;
+}
+
+.welcome-message p {
+  font-size: 1.2em;
+  color: #f0e8e0;
+  margin-bottom: 20px;
+}
+
+.coffee-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.coffee-item {
+  background-color: #5c4033;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coffee-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.coffee-item .coffee-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.coffee-item h3 {
+  color: #d8b293;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.coffee-item p {
+  color: #f0e8e0;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #a47551;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #946846;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #6e4c39;
+  color: #f0e8e0;
+}
+
+.btn-secondary:hover {
+  background-color: #82563b;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: #8b4513;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #7a3c0f;
+  transform: translateY(-2px);
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #f5e6d8;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5c4033;
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  background-color: #6e4c39;
+  border-color: #a47551;
+  transform: scale(1.02);
+}
+
+.error-message {
+  background-color: #8b4513;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success-message {
+  background-color: #3e5c23;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: #b8a394;
+  font-size: 0.9em;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .header .logo {
+    font-size: 2em;
+  }
+  
+  .header .subtitle {
+    font-size: 1em;
+  }
+  
+  .coffee-menu {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .coffee-item {
+    padding: 20px;
+  }
+  
+  .coffee-item .coffee-icon {
+    font-size: 2.5em;
+  }
+  
+  .coffee-item h3 {
+    font-size: 1.3em;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .welcome-message {
+    padding: 30px 20px;
+  }
+  
+  .welcome-message h1 {
+    font-size: 2em;
+  }
+  
+  .welcome-message p {
+    font-size: 1.1em;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .card h1 {
+    font-size: 2em;
+  }
+  
+  .card h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    padding: 5px;
+  }
+  
+  .header .logo {
+    font-size: 1.8em;
+  }
+  
+  .header .subtitle {
+    font-size: 0.9em;
+  }
+  
+  .coffee-menu {
+    gap: 15px;
+  }
+  
+  .coffee-item {
+    padding: 15px;
+  }
+  
+  .coffee-item .coffee-icon {
+    font-size: 2em;
+  }
+  
+  .coffee-item h3 {
+    font-size: 1.2em;
+  }
+  
+  .coffee-item p {
+    font-size: 0.9em;
+  }
+  
+  .welcome-message {
+    padding: 20px 15px;
+  }
+  
+  .welcome-message h1 {
+    font-size: 1.8em;
+  }
+  
+  .welcome-message p {
+    font-size: 1em;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .card h1 {
+    font-size: 1.8em;
+  }
+  
+  .card h2 {
+    font-size: 1.3em;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .input-group input {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Melhorias para orientação landscape em dispositivos móveis */
+@media (max-width: 768px) and (orientation: landscape) {
+  .header .logo {
+    font-size: 1.8em;
+  }
+  
+  .welcome-message {
+    padding: 20px;
+  }
+  
+  .welcome-message h1 {
+    font-size: 1.8em;
+  }
+  
+  .coffee-menu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .coffee-item {
+    padding: 15px;
+  }
+  
+  .coffee-item .coffee-icon {
+    font-size: 2em;
+  }
+}
+
+/* Melhorias para telas muito pequenas */
+@media (max-width: 320px) {
+  .header .logo {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+  }
+  
+  .coffee-item h3 {
+    font-size: 1.1em;
+  }
+  
+  .coffee-item p {
+    font-size: 0.8em;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}

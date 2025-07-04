@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const createError = require('http-errors');
+const { getErrorData } = require('./utils/errorHandler');
 
 const authRouter = require('./routes/auth');
 
@@ -39,11 +40,16 @@ function checkLogin(req, res, next) {
 
 // Routes
 app.get('/', (req, res) => {
-  res.redirect('/auth/login');
+  if (req.session.loggedIn === true) {
+    res.redirect('/home');
+  } else {
+    res.render('landing');
+  }
 });
 
 app.get('/home', checkLogin, (req, res) => {
-  res.render('home', { user: 'User Authenticated' });
+  res.render
+  ('home', { user: 'User Authenticated' });
 });
 
 // Error handler 404
@@ -53,10 +59,17 @@ app.use(function(req, res, next) {
 
 //set locals, only providing error in development
 app.use((err, req, res, next) => {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  res.status(err.status || 500);
-  res.render('error');
+  const statusCode = err.status || 500;
+  const errorData = getErrorData(statusCode, 'general');
+  
+  // Em desenvolvimento, mostra detalhes do erro
+  if (req.app.get('env') === 'development') {
+    errorData.errorMessage = err.message;
+    errorData.solutionMessage = `Erro técnico: ${err.message}. Stack: ${err.stack}`;
+  }
+  
+  res.status(statusCode);
+  res.render('error', errorData);
 });
 
 

@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Erro</title>
+  <meta charset="UTF-8">
+  <title>Erro - Coffee Shop</title>
+  <link rel="stylesheet" href="/css/error.css">
 </head>
 <body>
-  <h1>Ocorreu um erro</h1>
-  <p>{{message}}</p>
-  <a href="/auth/login">Voltar</a>
+  <div class="container">
+    <header class="header">
+      <h1 class="logo">☕ Coffee Shop</h1>
+      <p class="subtitle">Ops! Algo deu errado...</p>
+    </header>
+
+    <div class="card">
+      {{#if errorCode}}
+        <div class="error-code">{{errorCode}}</div>
+      {{/if}}
+      
+      <h1>{{#if errorIcon}}{{errorIcon}}{{else}}😔{{/if}} {{errorTitle}}</h1>
+      
+      <div class="error-message">
+        <div class="error-description">
+          {{#if errorMessage}}
+            <p>{{errorMessage}}</p>
+          {{else}}
+            <p>{{message}}</p>
+          {{/if}}
+        </div>
+      </div>
+      
+      <div class="welcome-message">
+        <h2>🔧 {{#if solutionTitle}}{{solutionTitle}}{{else}}Não se preocupe!{{/if}}</h2>
+        <p>{{#if solutionMessage}}{{solutionMessage}}{{else}}Nossa equipe está trabalhando para resolver este problema. Enquanto isso, que tal voltar e tentar novamente?{{/if}}</p>
+      </div>
+
+      <div class="button-group">
+        {{#if backUrl}}
+          <a href="{{backUrl}}" class="btn btn-primary">{{#if backText}}{{backText}}{{else}}Voltar{{/if}}</a>
+        {{else}}
+          <a href="/auth/login" class="btn btn-primary">Voltar ao Login</a>
+        {{/if}}
+        <a href="/" class="btn btn-secondary">Página Inicial</a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>☕ Coffee Shop - O melhor café da cidade</p>
+      <p>Em caso de problemas, entre em contato conosco</p>
+    </footer>
+  </div>
 </body>
 </html>

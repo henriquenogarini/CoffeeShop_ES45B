@@ -1,0 +1,181 @@
+/* CSS para página de Landing/Welcome */
+body {
+  background: linear-gradient(135deg, #2e1d13, #3e2c23, #4a3326);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  color: #eae0d5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.landing-container {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  background-color: rgba(62, 44, 35, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+}
+
+.landing-logo {
+  font-size: 4em;
+  color: #d8b293;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.landing-title {
+  font-size: 2.5em;
+  color: #fff8f0;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.landing-subtitle {
+  font-size: 1.3em;
+  color: #f5e6d8;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.landing-description {
+  font-size: 1.1em;
+  color: #f0e8e0;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-btn {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.landing-btn-primary {
+  background: linear-gradient(45deg, #a47551, #c8956d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(164, 117, 81, 0.3);
+}
+
+.landing-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(164, 117, 81, 0.5);
+}
+
+.landing-btn-secondary {
+  background: linear-gradient(45deg, #6e4c39, #8b6145);
+  color: #f0e8e0;
+  box-shadow: 0 4px 15px rgba(110, 76, 57, 0.3);
+}
+
+.landing-btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(110, 76, 57, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .landing-container {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+  
+  .landing-logo {
+    font-size: 3em;
+  }
+  
+  .landing-title {
+    font-size: 2em;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.1em;
+  }
+  
+  .landing-description {
+    font-size: 1em;
+  }
+  
+  .landing-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .landing-btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .landing-container {
+    padding: 25px 15px;
+    border-radius: 15px;
+  }
+  
+  .landing-logo {
+    font-size: 2.5em;
+  }
+  
+  .landing-title {
+    font-size: 1.8em;
+  }
+  
+  .landing-subtitle {
+    font-size: 1em;
+  }
+  
+  .landing-description {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+  
+  .landing-btn {
+    max-width: 200px;
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+}
