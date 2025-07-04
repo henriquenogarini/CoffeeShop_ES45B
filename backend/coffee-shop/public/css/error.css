@@ -1,0 +1,246 @@
+body {
+  background: linear-gradient(135deg, #2e1d13, #3e2c23, #4a3329);
+  color: #eae0d5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 48px;
+  color: #d8b293;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  animation: pulse 2s infinite;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #c4a484;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.card {
+  background: rgba(62, 44, 35, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(216, 178, 147, 0.2);
+  animation: slideIn 0.8s ease-out;
+}
+
+.card h1 {
+  font-size: 32px;
+  color: #fff8f0;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.error-message {
+  background: rgba(139, 69, 19, 0.3);
+  border-left: 4px solid #d2691e;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.error-message p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff8f0;
+}
+
+.error-code {
+  font-size: 64px;
+  font-weight: bold;
+  color: #d2691e;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.error-title {
+  font-size: 24px;
+  color: #d8b293;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.error-description {
+  font-size: 16px;
+  color: #c4a484;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.welcome-message {
+  background: rgba(164, 117, 81, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px 0;
+  border: 1px solid rgba(164, 117, 81, 0.3);
+}
+
+.welcome-message h2 {
+  color: #d8b293;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.welcome-message p {
+  color: #c4a484;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: inline-block;
+  min-width: 140px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #a47551, #946846);
+  color: white;
+  border-color: #a47551;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #946846, #82563b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(164, 117, 81, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #d8b293;
+  border-color: #d8b293;
+}
+
+.btn-secondary:hover {
+  background: #d8b293;
+  color: #2e1d13;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(216, 178, 147, 0.3);
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  color: #a47551;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* Animações */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: 36px;
+  }
+  
+  .card {
+    padding: 30px 20px;
+  }
+  
+  .card h1 {
+    font-size: 24px;
+  }
+  
+  .error-code {
+    font-size: 48px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .card {
+    padding: 25px 15px;
+  }
+  
+  .error-message {
+    padding: 15px;
+  }
+  
+  .welcome-message {
+    padding: 20px;
+  }
+  
+  .error-code {
+    font-size: 40px;
+  }
+}
